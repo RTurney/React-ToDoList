@@ -8,6 +8,7 @@ function App() {
 
   const [inputText, setInputText] = useState('');
   const [toDos, setToDos] = useState([]);
+  const [status, setStatus] = useState('All');
 
   return (
     <div className="App">
@@ -19,8 +20,9 @@ function App() {
         toDos={toDos}
         setInputText={setInputText} 
         setToDos={setToDos}
+        setStatus={setStatus}
       />
-      <ToDoList toDos={toDos}/>
+      <ToDoList toDos={toDos} setToDos={setToDos}/>
     </div>
   );
 }
