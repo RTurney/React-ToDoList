@@ -6,16 +6,24 @@ import ToDoList from './components/ToDoList';
 
 function App() {
 
+  //state variables 
   const [inputText, setInputText] = useState('');
   const [toDos, setToDos] = useState([]);
   const [filteredToDos, setFilteredToDos] = useState([]);
   const [status, setStatus] = useState('all');
   
+  // run once upon refresh/load
+  useEffect(() => {
+    getToDos();
+  }, [])
 
+// run each time todos or status is changed 
   useEffect(() => {
     filterHandler();
+    saveToDos();
   }, [toDos, status]);
 
+// filter tasks 
   const filterHandler =() => {
     switch(status){
       case 'completed':
@@ -27,6 +35,20 @@ function App() {
       default:
         setFilteredToDos(toDos)
         break;
+    }
+  };
+
+  //save to local 
+  const saveToDos = () => {
+      localStorage.setItem('toDos', JSON.stringify(toDos))
+  };
+  //get saved todos 
+  const getToDos = () => {
+    if(localStorage.getItem('toDos') === null ){
+      saveToDos();
+    } else {
+      let localToDos = JSON.parse(localStorage.getItem('toDos', JSON.stringify(toDos)));
+      setToDos(localToDos);
     }
   };
 
