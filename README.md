@@ -1,3 +1,40 @@
+# Basic ToDo list app 
+
+This app was built in React following the instructions of this video: 
+https://www.youtube.com/watch?v=pCA4qpQDZD8&t=1s
+
+This app allows users to:
+* Add a task 
+* Click whether a task is completed or not 
+* Delete a task 
+* Filter tasks by their status 
+* Save tasklist to local storage 
+
+---------------------------
+## Current status on main 
+
+There is only one branch to this application. 
+
+Currently this application fulfills all the criteria I wanted from this project: 
+* Users can add, delete, complete tasks 
+* Users can filter tasks by status 
+* Tasks are saved locally, not by session 
+
+There are currently no tests built for this application, however I may add testing in the future to train myself in testing with react. 
+
+---------------------------
+## README contents 
+1. Installation and setup 
+2. Running the app 
+3. Understanding the repo 
+4. Notes 
+5. Contributors 
+
+--------------------------
+## Installation and setup 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
